@@ -28,8 +28,11 @@ const App = () => {
     const unsubscribe = subscribeTaskSSE(
       (rawData, event) => {
         if (event === 'agent-completed') {
-          const updatedAgent = rawData;
+          const updatedAgent = (rawData);
           setTaskResult(prev => {
+            const prevTask = prev?.[updatedAgent.taskId];
+            if (!prevTask) return prev;
+            // Обновляем только нужного агента
             const agents = prevTask.tasksToAgents.map(agent => {
               if (agent.agentId !== updatedAgent.agentId) return agent;
               return { ...agent, ...updatedAgent }; // перезаписываем только поля пришедшего SSE
