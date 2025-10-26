@@ -119,7 +119,7 @@ export const deployAgent = async (body: { ip: string; user: string }): Promise<a
 
     if (!res.ok) throw new Error(`Failed to deploy agent: ${res.status}`);
 
-    return res.json();
+    return res;
 };
 
 export const getSshKey = async (): Promise<string> => {

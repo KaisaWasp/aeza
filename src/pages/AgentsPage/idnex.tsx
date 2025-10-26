@@ -36,8 +36,7 @@ const AgentsPage = () => {
 
   const isAdmin = sessionStorage.getItem("isAdmin") === "true";
 
-  const handleAddAgent = (key: string, vpsIp: string, vpsUser: string) => {
-    console.log("Добавляем агента:", { key, vpsIp, vpsUser });
+  const handleAddAgent = () => {
     setModalOpen(false);
   };
 

@@ -24,8 +24,6 @@ const HistoryPage = () => {
   const [searchParams] = useSearchParams();
   const taskId = searchParams.get("id");
 
-  console.log(taskId)
-
   const { id } = useParams<{ id: string }>();
   const [geo, setGeo] = useState<HostGeo | null>(null);
   const [tasks, setTasks] = useState<Task[]>([]);

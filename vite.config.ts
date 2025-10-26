@@ -17,6 +17,13 @@ export default defineConfig({
         secure: true,
         rewrite: (path) => path.replace(/^\/api/, '/api'),
       },
+      '/api/admin/deploy-agent/stream': {
+        target: 'https://hack.nomli.ru',
+        changeOrigin: true,
+        secure: true,
+        ws: false,
+        rewrite: (path) => path.replace(/^\/api/, ''), 
+      },
     },
   },
 })

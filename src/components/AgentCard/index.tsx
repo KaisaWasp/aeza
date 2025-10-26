@@ -94,7 +94,7 @@ const AgentCard: FC<AgentCardProps> = ({
         </div>
 
         <div className="flex gap-4 items-center">
-          <p className={isOnline ? "text-green-500" : "text-[#FF375F]"}>online</p>
+          <p className={isOnline ? "text-green-500" : "text-[#FF375F]"}>{isOnline ? 'online' : 'offline'}</p>
           <p className="text-[#FF375F]">{!isOnline && formatTime(lastSeen)}</p>
         </div>
       </div>
