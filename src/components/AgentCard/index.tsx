@@ -83,7 +83,7 @@ const AgentCard: FC<AgentCardProps> = ({
       <div className="flex w-full justify-between">
         <div className="flex flex-col gap-4">
           <p className="text-[22px] sm:text-[38px] text-white border-b-2 border-[#FF375F] inline-block">
-            {city.split(" ").map((word, index) => (
+            {city?.split(" ").map((word, index) => (
               <span key={index}>
                 {word}
                 <br />
