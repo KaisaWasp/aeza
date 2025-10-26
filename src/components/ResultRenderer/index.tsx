@@ -3,6 +3,8 @@ import HttpResult from '../HttpResult';
 import PingResult from '../PingResult';
 import TcpResult from '../TcpResult';
 import DnsResult from '../DnsResult';
+import TracerResult from '../TracerouteRsult';
+import Info from '../Info';
 
 interface ResultRendererProps {
   type: string;
@@ -22,6 +24,12 @@ const ResultRenderer: React.FC<ResultRendererProps> = ({ type, taskResult }) => 
 
     case 'dns-lookup':
       return <DnsResult taskResult={taskResult} />;
+
+    case 'traceroute':
+      return <TracerResult taskResult={taskResult} />;
+
+    case 'info':
+      return <Info taskResult={taskResult} />;
 
     default:
       return (

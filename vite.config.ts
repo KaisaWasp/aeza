@@ -15,7 +15,7 @@ export default defineConfig({
         target: 'https://hack.nomli.ru',
         changeOrigin: true,
         secure: true,
-        rewrite: (path) => path.replace(/^\/api/, '/api/core'),
+        rewrite: (path) => path.replace(/^\/api/, '/api'),
       },
     },
   },

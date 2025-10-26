@@ -73,7 +73,6 @@ const DnsResult: React.FC<DnsResultProps> = ({ taskResult }) => {
         </tbody>
       </table>
 
-      {/* Модалка */}
       <Modal isOpen={open} onClose={() => setOpen(false)}>
         <h3 className="text-[#FF375F] mb-3 text-lg font-semibold">
           DNS Result - {selectedTask?.agent?.location || ""}

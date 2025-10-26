@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { HttpResult as HttpResultType, HttpTaskToAgent } from "../../types/index";
+import { HttpResult as HttpResultType, HttpTaskToAgent } from "../../types";
 import Modal from "../Modal";
-
 interface HttpResultProps {
   taskResult: HttpResultType;
 }

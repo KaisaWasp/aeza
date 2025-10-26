@@ -19,7 +19,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
 
   return (
     <div
-      className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50"
+      className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-100000"
       onClick={onClose}
     >
       <div
@@ -33,7 +33,6 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
           X
         </button>
 
-        {/* Контент */}
         <div className="max-h-[70vh] overflow-y-auto">{children}</div>
       </div>
     </div>

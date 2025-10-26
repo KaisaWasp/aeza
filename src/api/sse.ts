@@ -2,7 +2,7 @@ export function subscribeTaskSSE(
   onMessage: (data: any, eventType: string) => void,
   onError?: (err: any) => void
 ) {
-  const url = `/api/task/stream`;
+  const url = `/api/core/task/stream`;
   const eventSource = new EventSource(url);
 
   eventSource.addEventListener('agent-initialized', (event: MessageEvent) => {

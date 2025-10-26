@@ -1,5 +1,6 @@
 import { ReactNode, useRef, useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+// @ts-ignore
 import "swiper/css";
 
 interface Tab {
@@ -22,7 +23,7 @@ const Tabs: React.FC<TabsProps> = ({ tabs, activeIndex, onTabChange }) => {
     if (!container) return;
 
     const totalWidth = Array.from(container.children).reduce(
-      (sum, child) => sum + (child as HTMLElement).offsetWidth + 8, // gap
+      (sum, child) => sum + (child as HTMLElement).offsetWidth + 8,
       0
     );
     setUseSwiper(totalWidth > container.offsetWidth);
@@ -37,11 +38,10 @@ const Tabs: React.FC<TabsProps> = ({ tabs, activeIndex, onTabChange }) => {
               <SwiperSlide key={index} className="!w-auto">
                 <button
                   onClick={() => onTabChange(index)}
-                  className={`h-[43px] flex items-center justify-center rounded-[30px] border-2 transition-colors duration-200 whitespace-nowrap min-w-[217px] flex-none ${
-                    activeIndex === index
-                      ? "border-[#FF375F] text-[#FF375F]"
-                      : "border-[#1C202A] text-white"
-                  }`}
+                  className={`h-[43px] flex items-center justify-center rounded-[30px] border-2 transition-colors duration-200 whitespace-nowrap min-w-[211px] flex-none ${activeIndex === index
+                    ? "border-[#FF375F] text-[#FF375F]"
+                    : "border-[#1C202A] text-white"
+                    }`}
                 >
                   {tab.label}
                 </button>
@@ -54,11 +54,10 @@ const Tabs: React.FC<TabsProps> = ({ tabs, activeIndex, onTabChange }) => {
               <button
                 key={index}
                 onClick={() => onTabChange(index)}
-                className={`flex-1 h-[43px] flex items-center justify-center rounded-[30px] border-2 transition-colors duration-200 ${
-                  activeIndex === index
-                    ? "border-[#FF375F] text-[#FF375F]"
-                    : "border-[#1C202A] text-white"
-                }`}
+                className={`flex-1 h-[43px] flex items-center justify-center rounded-[30px] border-2 transition-colors duration-200 ${activeIndex === index
+                  ? "border-[#FF375F] text-[#FF375F]"
+                  : "border-[#1C202A] text-white"
+                  }`}
               >
                 {tab.label}
               </button>
@@ -67,7 +66,6 @@ const Tabs: React.FC<TabsProps> = ({ tabs, activeIndex, onTabChange }) => {
         )}
       </div>
 
-      {/* Контент активной вкладки */}
       <div className="w-full mt-2">{tabs[activeIndex]?.content}</div>
     </div>
   );

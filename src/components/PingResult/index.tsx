@@ -35,12 +35,11 @@ const PingResult: React.FC<PingResultProps> = ({ taskResult }) => {
                         return (
                             <tr
                                 key={task.agentId}
-                                className={`group cursor-pointer even:bg-[#1C202A] ${
-                                    index !==
+                                className={`group cursor-pointer even:bg-[#1C202A] ${index !==
                                     taskResult.tasksToAgents.length - 1
-                                        ? "border-b-2 border-[#1C202A]"
-                                        : ""
-                                }`}
+                                    ? "border-b-2 border-[#1C202A]"
+                                    : ""
+                                    }`}
                             >
                                 <td className="py-2 px-3 border-r-2 border-[#1C202A] group-hover:text-[#FF375F] transition-colors">
                                     {task.agent?.location || "-"}
@@ -52,7 +51,7 @@ const PingResult: React.FC<PingResultProps> = ({ taskResult }) => {
                                     {rtt}
                                 </td>
                                 <td className="py-2 px-3 group-hover:text-[#FF375F] transition-colors">
-                                    {task.agent?.ip || "-"}
+                                    {task.result?.ip || "-"}
                                 </td>
                             </tr>
                         );
